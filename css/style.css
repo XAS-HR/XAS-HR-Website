@@ -187,3 +187,56 @@ footer { background:var(--ink); padding:60px 5vw 40px; }
   .service-card:nth-child(n) { border-bottom:1px solid var(--rule); }
   .service-card:last-child { border-bottom:none; }
 }
+
+/* ── DARK MODE ───────────────────────────────────────────────────── */
+[data-theme="dark"] {
+  --ink:    #F0EEE9;
+  --canvas: #0F0F0F;
+  --mid:    #9CA3AF;
+  --accent: #4F8EF7;
+  --rule:   #2A2A2A;
+  --white:  #1A1A1A;
+}
+[data-theme="dark"] nav                  { background: rgba(15,15,15,0.96); }
+[data-theme="dark"] #services            { background: #1A1A1A; }
+[data-theme="dark"] .service-card        { background: #1A1A1A; }
+[data-theme="dark"] .service-card:hover  { background: #222; }
+[data-theme="dark"] #contact             { background: #1A1A1A; }
+[data-theme="dark"] #process             { background: #0F0F0F; }
+[data-theme="dark"] .process-arrow       { background: #0F0F0F; }
+[data-theme="dark"] footer               { background: #0A0A0A; }
+[data-theme="dark"] .blog-card           { background: #1A1A1A; }
+[data-theme="dark"] .blog-card:hover     { background: #222; }
+[data-theme="dark"] .nav-links.open      { background: #0F0F0F; }
+[data-theme="dark"] .form-group input,
+[data-theme="dark"] .form-group select,
+[data-theme="dark"] .form-group textarea { background: #0F0F0F; color-scheme: dark; }
+
+body, nav, section, footer,
+.service-card, .why-card, .blog-card,
+.process-step, .process-arrow {
+  transition: background 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* ── FLOATING BUTTONS ────────────────────────────────────────────── */
+#xas-float {
+  position: fixed; right: 20px; bottom: 28px;
+  z-index: 999; display: flex; flex-direction: column; gap: 8px;
+}
+#xas-float button {
+  width: 42px; height: 42px; border-radius: 50%;
+  border: 1.5px solid var(--rule);
+  background: var(--white); color: var(--ink);
+  font-size: 16px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  transition: background 0.2s, color 0.2s, border-color 0.2s, opacity 0.3s;
+}
+#xas-float button:hover {
+  background: var(--accent); color: #fff; border-color: var(--accent);
+}
+#btn-up, #btn-dn { opacity: 0; pointer-events: none; }
+@media (max-width: 600px) {
+  #xas-float { right: 14px; bottom: 20px; }
+  #xas-float button { width: 38px; height: 38px; font-size: 14px; }
+}
